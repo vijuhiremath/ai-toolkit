@@ -45,7 +45,7 @@ Always skip dependencies, build output, lockfiles, binaries/assets, and generate
 
 **Simplify / refactor**
 - Remove dead code: unused imports, variables, params, props, exports, styles, unreachable branches.
-- Collapse needless indirection — wrappers, one-use helpers, or abstractions that don't earn their keep.
+- Collapse needless indirection — wrappers, one-use helpers, or abstractions that don't earn their keep. Keep one-use named locals that make markup or call sites easier to read (e.g. `const title = SCREEN_TITLES[screen]` above JSX) — don't inline them.
 - Deduplicate: reuse an existing helper/component in the project before creating a new one.
 - Flatten nesting (early returns), simplify conditionals, prefer clear names over clever code.
 - Units in names: a name holding a measured quantity should state its unit (`massT`, `activityGJ`, `timeoutMs`), not hide it (`value`, `amount`, `ef`, `x1`). Rename local variables directly; for exported names, shared types, or fields, suggest the rename instead.
