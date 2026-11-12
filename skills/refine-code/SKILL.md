@@ -48,6 +48,7 @@ Always skip dependencies, build output, lockfiles, binaries/assets, and generate
 - Collapse needless indirection — wrappers, one-use helpers, or abstractions that don't earn their keep.
 - Deduplicate: reuse an existing helper/component in the project before creating a new one.
 - Flatten nesting (early returns), simplify conditionals, prefer clear names over clever code.
+- Units in names: a name holding a measured quantity should state its unit (`massT`, `activityGJ`, `timeoutMs`), not hide it (`value`, `amount`, `ef`, `x1`). Rename local variables directly; for exported names, shared types, or fields, suggest the rename instead.
 - Tighten types: no `any`/untyped escapes, no redundant annotations the compiler infers, reuse existing shared types.
 - Styles: use the project's design tokens/variables instead of raw values where one exists; drop unused or duplicated rules.
 
@@ -55,6 +56,7 @@ Always skip dependencies, build output, lockfiles, binaries/assets, and generate
 - A comment survives only if it explains *why* something non-obvious is done (a workaround, a constraint, a domain or spec reference). Delete comments that restate *what* the code does.
 - Every surviving comment is **one line**. Rewrite multi-line comments/docblocks to one line, or delete them.
 - Delete commented-out code, stale/incorrect comments, TODOs with no context, and decorative banners.
+- Delete authorship and change-history comments ("added by…", "updated on…", changelogs) — version control tracks that.
 - Keep tool directives (`eslint-disable`, `@ts-expect-error`, `# noqa`, `refine-code:skip`, etc.) — each with a short reason on the same line.
 - Leave license headers alone.
 
